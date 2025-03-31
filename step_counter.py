@@ -2,7 +2,7 @@ import math
 
 import matplotlib.pyplot as plt
 
-
+#Replace jiba with csv
 def get_accel_net_data(name):
     path = "jiba"
     with open(path + name) as reader:
@@ -83,21 +83,9 @@ def get_step_peaks(data):
         i += 1
     return steps_x, steps_y
 
+def counted_steps():
+    counted_steps = en(steps_x)*2
 
-def plot(name, plotRows, plotCols, n):
-    acc_net = get_accel_net_data(name)
-    steps_x, steps_y = get_step_peaks(acc_net)
-    title = name[:name.find(".")]
-    num_steps = int(title.split("-")[1])
-    counted_steps = len(steps_x) * 2  
-    percent_error = ((counted_steps - num_steps) / num_steps) * 100
-
-    plt.subplot(plotRows, plotCols, n)
-    plt.title(title)
-    plt.plot(acc_net, "b-")
-    plt.plot(steps_x, steps_y, "ro")
-    plt.text(2, 2, f"{counted_steps} counted steps\nPercent error: {percent_error:.2f}%", 
-             color='white', fontsize=12, bbox=dict(facecolor='black', alpha=0.5))
 
 
 filenames = ["1-200-step-regular.csv", "2-200-step-variable.csv", "3-200-step-jacket.csv", "4-100-step-running.csv",
