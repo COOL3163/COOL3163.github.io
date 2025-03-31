@@ -31,5 +31,5 @@ def connect(url):
 
     ws.run_forever()
  
- 
+# format of the url is ws://<ip>:<port>/sensor/connect?type=<sensor_type>
 connect("ws://192.168.0.103:8080/sensor/connect?type=android.sensor.accelerometer") 
