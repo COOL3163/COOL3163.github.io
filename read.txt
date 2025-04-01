@@ -1,9 +1,1 @@
-eyang read these 
-https://stackoverflow.com/questions/68127440/how-do-i-transmit-real-time-android-sensor-data-to-a-pc-wirelessly
-
-https://stackoverflow.com/questions/18245849/how-to-transmit-android-real-time-sensor-data-to-computer
-
-https://github.com/umer0586/SensorServer
-
-dong check this ai:
-https://same.new/
+Check this shit dong
