@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Game Over</h1>
+    </header>
+    <main>
+        <h2>Final Results</h2>
+        <p>Player: {{ stats.name }}</p>
+        <p>Days Played: {{ stats.days }}</p>
+        <p>Total Eco Points: {{ stats.eco_points }}</p>
+        <p>Final Sustainability Level: {{ stats.sustainability }}</p>
+        <p>Thank you for playing the Hong Kong Sustainability Challenge!</p>
+        <a href="/">Play Again</a>
+    </main>
+</body>
+</html>

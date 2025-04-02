@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    text-align: center; /* Center all text by default */
 }
 
 header {
@@ -15,24 +16,35 @@ header {
 
 main {
     padding: 2rem;
-    text-align: center;
 }
 
-button {
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 0.5rem 0;
+}
+
+a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
     background-color: #4caf50;
     color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    margin: 0.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-button:hover {
+a:hover {
     background-color: #45a049;
 }
 
-input {
-    padding: 0.5rem;
-    margin: 1rem 0;
-    width: 80%;
+section {
+    margin-bottom: 2rem;
+}
+
+h2, h3 {
+    margin-bottom: 1rem;
 }

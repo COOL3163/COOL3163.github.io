@@ -4,22 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hong Kong Sustainability Challenge</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <header>
         <h1>Hong Kong Sustainability Challenge</h1>
     </header>
     <main>
-        <p>Player: {{ player.name }}</p>
-        <p>Day: {{ player.day }} | Eco Points: {{ player.eco_points }} | Energy: {{ player.energy }}</p>
-        <p>Location: {{ player.location }}</p>
-        <p>Sustainability Level: {{ player.sustainability }}</p>
-        <h3>Actions:</h3>
-        <ul>
-            {% for action in actions %}
-                <li><a href="/action/{{ action }}">{{ action }}</a></li>
-            {% endfor %}
-        </ul>
+        <section>
+            <h2>Player Stats</h2>
+            <p>Player: {{ player.name }}</p>
+            <p>Day: {{ player.day }} | Eco Points: {{ player.eco_points }} | Energy: {{ player.energy }}</p>
+            <p>Sustainability Level: {{ player.sustainability }}</p>
+        </section>
+        <section>
+            <h2>Current Location: {{ location.description }}</h2>
+            <h3>Actions</h3>
+            <ul>
+                {% for action in actions %}
+                    <li><a href="/action/{{ action }}">{{ action.replace('_', ' ').title() }}</a></li>
+                {% endfor %}
+            </ul>
+            <h3>Travel to Another Location</h3>
+            <ul>
+                {% for loc, loc_data in game.locations.items() %}
+                    {% if loc != player.location %}
+                        <li><a href="/change_location/{{ loc }}">{{ loc.title() }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </section>
+        <section>
+            <a href="/end_day">End Day</a> | <a href="/random_tip">Get a Sustainability Tip</a>
+        </section>
+        {% if tip %}
+        <section>
+            <h3>Sustainability Tip</h3>
+            <p>{{ tip }}</p>
+        </section>
+        {% endif %}
     </main>
 </body>
 </html>
