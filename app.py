@@ -24,7 +24,7 @@ def start_game():
 
 @app.route('/game')
 def game_view():
-    if game.days > 7: 
+    if game.energy <= 0 or game.days > 7: 
         return redirect(url_for('game_over'))
 
     player = {
@@ -41,7 +41,7 @@ def game_view():
         player=player,
         location=location,
         actions=location['actions'],
-        game=game,  
+        game=game,
         tip=session.pop('sustainability_tip', None)
     )
 
@@ -71,15 +71,16 @@ def random_tip():
 
 @app.route('/game_over')
 def game_over():
+    reason = "You ran out of energy!" if game.energy <= 0 else "You completed 7 days!"
     return render_template(
         'game_over.html',
         stats={
             "name": game.player_name,
             "days": game.days,
             "eco_points": game.eco_points,
-            "sustainability": game.sustainability_level
+            "sustainability": game.sustainability_level,
+            "reason": reason
         }
     )
-
 if __name__ == '__main__':
     app.run(debug=True)
