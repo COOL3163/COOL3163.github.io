@@ -50,6 +50,7 @@ GAME FEATURES:
 - Explore 5 different locations around Hong Kong
 - Perform various sustainability actions
 - Manage your energy and eco points
+- Choose between actions that either trade eco points for energy or vice versa
 - Learn real facts about Hong Kong's environment
 - Deal with random events and challenges
 - Make strategic decisions for maximum positive impact
@@ -59,7 +60,6 @@ Are you ready to make Hong Kong more sustainable?
 
 def start_game():
     """Start the sustainability game"""
-    # Import here to prevent errors if the file doesn't exist
     from sustainability_game import SustainabilityGame
 
     game = SustainabilityGame()
@@ -78,12 +78,19 @@ def main():
 
         if choice.lower() in ['y', 'yes']:
             start_game()
+            while True:
+                print("\nGame finished! Would you like to play again?")
+                play_again = input("Play again? (y/n): ")
 
-            print("\nGame finished! Would you like to play again?")
-            play_again = input("Play again? (y/n): ")
-
-            if play_again.lower() not in ['y', 'yes']:
-                break
+                if play_again.lower() in ['y', 'yes']:
+                    start_game()
+                    break
+                elif play_again.lower() in ['n', 'no']:
+                    print("\nExiting the game. See you next time!")
+                    time.sleep(1)
+                    return
+                else:
+                    print("Invalid input. Please enter 'y' or 'n'.")
         else:
             print("\nExiting the game. See you next time!")
             time.sleep(1)

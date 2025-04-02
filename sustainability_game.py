@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import random
 
 class SustainabilityGame:
@@ -16,14 +18,14 @@ class SustainabilityGame:
             "park": {"description": "Hong Kong Park", "actions": ["plant_trees", "water_conservation", "community_garden"]}
         }
         self.action_impacts = {
-            "save_energy": {"eco_points": 5, "energy": -10, "sustainability": 0.5},
-            "reduce_waste": {"eco_points": 5, "energy": -15, "sustainability": 0.5},
+            "save_energy": {"eco_points": -5, "energy": 10, "sustainability": 0.5},
+            "reduce_waste": {"eco_points": -10, "energy": 15, "sustainability": 0.5},
             "rest": {"eco_points": 0, "energy": 50, "sustainability": 0},
-            "use_public_transport": {"eco_points": 10, "energy": -10, "sustainability": 0.7},
-            "reduce_paper": {"eco_points": 5, "energy": -5, "sustainability": 0.3},
-            "advocate_sustainability": {"eco_points": 15, "energy": -25, "sustainability": 1},
-            "buy_local_produce": {"eco_points": 10, "energy": -15, "sustainability": 0.6},
-            "reduce_plastic": {"eco_points": 10, "energy": -10, "sustainability": 0.5},
+            "use_public_transport": {"eco_points": 5, "energy": -10, "sustainability": 0.7},
+            "reduce_paper": {"eco_points": 3, "energy": -5, "sustainability": 0.3},
+            "advocate_sustainability": {"eco_points": 10, "energy": -25, "sustainability": 1},
+            "buy_local_produce": {"eco_points": 5, "energy": -10, "sustainability": 0.6},
+            "reduce_plastic": {"eco_points": 7, "energy": -5, "sustainability": 0.5},
             "educate_vendors": {"eco_points": 15, "energy": -20, "sustainability": 0.8},
             "clean_beach": {"eco_points": 20, "energy": -30, "sustainability": 1},
             "join_conservation": {"eco_points": 25, "energy": -35, "sustainability": 1.2},
@@ -58,7 +60,7 @@ class SustainabilityGame:
     def end_day(self):
         """End the current day and recover energy."""
         self.days += 1
-        self.energy = min(100, self.energy + 30) 
+        self.energy = min(100, self.energy + 20)  # Reduced energy recovery
         return {
             "days": self.days,
             "energy": self.energy

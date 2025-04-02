@@ -4,8 +4,6 @@ from sustainability_game import SustainabilityGame
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-game = SustainabilityGame()
-
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -16,71 +14,71 @@ def start_game():
     if not player_name:
         return redirect(url_for('home'))
 
-    global game
-    game = SustainabilityGame()
-    game.player_name = player_name
+    app.game = SustainabilityGame()  # Attach the game object to the app instance
+    app.game.player_name = player_name
     
     return redirect(url_for('game_view'))
 
 @app.route('/game')
 def game_view():
-    if game.energy <= 0 or game.days > 7: 
+    if not hasattr(app, 'game') or app.game.energy <= 0 or app.game.days > 7:
         return redirect(url_for('game_over'))
 
     player = {
-        "name": game.player_name,
-        "eco_points": game.eco_points,
-        "energy": game.energy,
-        "day": game.days,
-        "sustainability": game.sustainability_level,
-        "location": game.current_location
+        "name": app.game.player_name,
+        "eco_points": app.game.eco_points,
+        "energy": app.game.energy,
+        "day": app.game.days,
+        "sustainability": app.game.sustainability_level,
+        "location": app.game.current_location
     }
-    location = game.locations[game.current_location]
+    location = app.game.locations[app.game.current_location]
     return render_template(
         'game.html',
         player=player,
         location=location,
         actions=location['actions'],
-        game=game,
-        tip=session.pop('sustainability_tip', None)
+        tip=session.pop('sustainability_tip', None),
+        game={"locations": app.game.locations}  # Pass game.locations explicitly
     )
 
 @app.route('/action/<action>')
 def perform_action(action):
-    result = game.perform_action(action)
+    result = app.game.perform_action(action)
     if "error" in result:
         return redirect(url_for('game_view'))
     return redirect(url_for('game_view'))
 
 @app.route('/change_location/<location>')
 def change_location(location):
-    if location in game.locations:
-        game.current_location = location
-        game.energy -= 5  
+    if location in app.game.locations:
+        app.game.current_location = location
+        app.game.energy -= 5  
     return redirect(url_for('game_view'))
 
 @app.route('/end_day')
 def end_day():
-    game.end_day()
+    app.game.end_day()
     return redirect(url_for('game_view'))
 
 @app.route('/random_tip')
 def random_tip():
-    session['sustainability_tip'] = game.get_random_tip()
+    session['sustainability_tip'] = app.game.get_random_tip()
     return redirect(url_for('game_view'))
 
 @app.route('/game_over')
 def game_over():
-    reason = "You ran out of energy!" if game.energy <= 0 else "You completed 7 days!"
+    reason = "You ran out of energy!" if app.game.energy <= 0 else "You completed 7 days!"
     return render_template(
         'game_over.html',
         stats={
-            "name": game.player_name,
-            "days": game.days,
-            "eco_points": game.eco_points,
-            "sustainability": game.sustainability_level,
+            "name": app.game.player_name,
+            "days": app.game.days,
+            "eco_points": app.game.eco_points,
+            "sustainability": app.game.sustainability_level,
             "reason": reason
         }
     )
+
 if __name__ == '__main__':
     app.run(debug=True)
