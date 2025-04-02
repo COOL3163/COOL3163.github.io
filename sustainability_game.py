@@ -58,7 +58,7 @@ class SustainabilityGame:
     def end_day(self):
         """End the current day and recover energy."""
         self.days += 1
-        self.energy = min(100, self.energy + 30)  # Recover energy
+        self.energy = min(100, self.energy + 30) 
         return {
             "days": self.days,
             "energy": self.energy

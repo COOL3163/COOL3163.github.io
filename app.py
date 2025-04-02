@@ -4,7 +4,6 @@ from sustainability_game import SustainabilityGame
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
-# Initialize the game
 game = SustainabilityGame()
 
 @app.route('/')
@@ -25,7 +24,7 @@ def start_game():
 
 @app.route('/game')
 def game_view():
-    if game.days > 7:  # End the game after 7 days
+    if game.days > 7: 
         return redirect(url_for('game_over'))
 
     player = {
@@ -42,7 +41,7 @@ def game_view():
         player=player,
         location=location,
         actions=location['actions'],
-        game=game,  # Pass the game object to the template
+        game=game,  
         tip=session.pop('sustainability_tip', None)
     )
 
@@ -57,7 +56,7 @@ def perform_action(action):
 def change_location(location):
     if location in game.locations:
         game.current_location = location
-        game.energy -= 5  # Traveling consumes energy
+        game.energy -= 5  
     return redirect(url_for('game_view'))
 
 @app.route('/end_day')
