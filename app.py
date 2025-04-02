@@ -18,7 +18,7 @@ def start_game():
         return redirect(url_for('home'))
     session['player_name'] = player_name
     game.player_name = player_name
-    return redirect(url_for('game'))
+    return redirect(url_for('game_view'))
 
 @app.route('/game')
 def game_view():
