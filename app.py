@@ -22,14 +22,17 @@ def start_game():
 
 @app.route('/game')
 def game_view():
+    player = {
+        "name": game.player_name,
+        "eco_points": game.eco_points,
+        "energy": game.energy,
+        "day": game.days,
+        "sustainability": game.sustainability_level,
+        "location": game.current_location
+    }
     return render_template(
         'game.html',
-        player_name=game.player_name,
-        eco_points=game.eco_points,
-        energy=game.energy,
-        day=game.days,
-        sustainability=game.sustainability_level,
-        location=game.current_location,
+        player=player,
         actions=game.locations[game.current_location]['actions']
     )
 
