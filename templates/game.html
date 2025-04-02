@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hong Kong Sustainability Challenge</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Hong Kong Sustainability Challenge</h1>
+    </header>
+    <main>
+        <p>Player: {{ player.name }}</p>
+        <p>Day: {{ player.day }} | Eco Points: {{ player.eco_points }} | Energy: {{ player.energy }}</p>
+        <p>{{ location.description }}</p>
+        {% if message %}
+            <p><strong>{{ message }}</strong></p>
+        {% endif %}
+        <form method="POST">
+            <div>
+                {% for action in location.actions %}
+                    <button type="submit" name="action" value="{{ action }}">{{ action }}</button>
+                {% endfor %}
+            </div>
+            <button type="submit" name="end_day">End Day</button>
+        </form>
+    </main>
+</body>
+</html>
