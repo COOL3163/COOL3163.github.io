@@ -75,7 +75,7 @@ def game_over():
             "name": app.game.player_name,
             "days": app.game.days,
             "eco_points": app.game.eco_points,
-            "sustainability": app.game.sustainability_level,
+            "sustainability": app.game.sustainability_level.round(),
             "reason": reason
         }
     )
