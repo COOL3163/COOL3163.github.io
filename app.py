@@ -29,7 +29,7 @@ def game_view():
         "eco_points": app.game.eco_points,
         "energy": app.game.energy,
         "day": app.game.days,
-        "sustainability": app.game.sustainability_level,
+        "sustainability": round(app.game.sustainability_level),
         "location": app.game.current_location
     }
     location = app.game.locations[app.game.current_location]
@@ -69,14 +69,16 @@ def random_tip():
 @app.route('/game_over')
 def game_over():
     reason = "You ran out of energy!" if app.game.energy <= 0 else "You completed 7 days!"
+    suggestions = "Try to balance your energy and eco points better next time!" if app.game.energy <= 0 else "Great job! Aim for a higher sustainability level next time!"
     return render_template(
         'game_over.html',
         stats={
             "name": app.game.player_name,
             "days": app.game.days,
             "eco_points": app.game.eco_points,
-            "sustainability": app.game.sustainability_level.round(),
-            "reason": reason
+            "sustainability": round(app.game.sustainability_level),
+            "reason": reason,
+            "suggestions": suggestions
         }
     )
 

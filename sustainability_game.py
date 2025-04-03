@@ -37,9 +37,9 @@ class SustainabilityGame:
 
             #negative actions
             "eat_junk_food": {"eco_points": -10, "energy": 25, "sustainability": -1},
-            "drive_a_car": {"eco_points": -15, "energy": 30, "sustainability": -0.8},
+            "drive_a_car": {"eco_points": -25, "energy": 30, "sustainability": -0.8},
             "use_single_use_plastics": {"eco_points": -5, "energy": 20, "sustainability": -0.5},
-            "buy_fast_fashion": {"eco_points": -20, "energy": 15, "sustainability": -1.2},
+            "buy_fast_fashion": {"eco_points": -30, "energy": 15, "sustainability": -1.2},
             "order_takeout": {"eco_points": -8, "energy": 10, "sustainability": -0.4},
             "skip_recycling": {"eco_points": -12, "energy": 25, "sustainability": -0.7},
             "consume_alot_of_meat": {"eco_points": -18, "energy": 20, "sustainability": -1.0},
