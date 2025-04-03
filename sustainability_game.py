@@ -11,16 +11,17 @@ class SustainabilityGame:
         self.sustainability_level = 0
         self.current_location = "home"
         self.locations = {
-            "home": {"description": "Your apartment in Hong Kong", "actions": ["save_energy", "reduce_waste", "rest"]},
-            "work": {"description": "Your office in Central", "actions": ["use_public_transport", "reduce_paper", "advocate_sustainability"]},
-            "market": {"description": "Local wet market in Mong Kok", "actions": ["buy_local_produce", "reduce_plastic", "educate_vendors"]},
-            "beach": {"description": "Repulse Bay Beach", "actions": ["clean_beach", "join_conservation", "raise_awareness"]},
-            "park": {"description": "Hong Kong Park", "actions": ["plant_trees", "water_conservation", "community_garden"]}
+            "home": {"description": "Your apartment in Hong Kong", "actions": ["save_energy", "reduce_waste", "rest", "consume_alot_of_meat"]},
+            "work": {"description": "Your office in Central", "actions": ["use_public_transport", "reduce_paper", "advocate_sustainability", "eat_junk_food", "Drive_a_car"]},
+            "market": {"description": "Local wet market in Mong Kok", "actions": ["buy_local_produce", "reduce_plastic", "educate_vendors", "use_single_use_plastics", "buy_fast_fashion"]},
+            "beach": {"description": "Repulse Bay Beach", "actions": ["clean_beach", "join_conservation", "raise_awareness", "order_takeout"]},
+            "park": {"description": "Hong Kong Park", "actions": ["plant_trees", "water_conservation", "community_garden", "skip_recycling", "consume_sugar_drinks"]}
         }
         self.action_impacts = {
-            "save_energy": {"eco_points": -5, "energy": 10, "sustainability": 0.5},
-            "reduce_waste": {"eco_points": -10, "energy": 15, "sustainability": 0.5},
+            #Rest
             "rest": {"eco_points": 0, "energy": 50, "sustainability": 0},
+            
+            #positive actions
             "use_public_transport": {"eco_points": 5, "energy": -10, "sustainability": 0.7},
             "reduce_paper": {"eco_points": 3, "energy": -5, "sustainability": 0.3},
             "advocate_sustainability": {"eco_points": 10, "energy": -25, "sustainability": 1},
@@ -32,7 +33,18 @@ class SustainabilityGame:
             "raise_awareness": {"eco_points": 15, "energy": -25, "sustainability": 0.9},
             "plant_trees": {"eco_points": 20, "energy": -30, "sustainability": 1.1},
             "water_conservation": {"eco_points": 15, "energy": -20, "sustainability": 0.8},
-            "community_garden": {"eco_points": 20, "energy": -25, "sustainability": 1}
+            "community_garden": {"eco_points": 20, "energy": -25, "sustainability": 1},
+
+            #negative actions
+            "eat_junk_food": {"eco_points": -10, "energy": 25, "sustainability": -1},
+            "drive_a_car": {"eco_points": -15, "energy": 30, "sustainability": -0.8},
+            "use_single_use_plastics": {"eco_points": -5, "energy": 20, "sustainability": -0.5},
+            "buy_fast_fashion": {"eco_points": -20, "energy": 15, "sustainability": -1.2},
+            "order_takeout": {"eco_points": -8, "energy": 10, "sustainability": -0.4},
+            "skip_recycling": {"eco_points": -12, "energy": 25, "sustainability": -0.7},
+            "consume_alot_of_meat": {"eco_points": -18, "energy": 20, "sustainability": -1.0},
+            "consume_sugar_drinks": {"eco_points": -10, "energy": 15, "sustainability": -0.6},
+
         }
         self.tips = [
             "Bring your own shopping bag to reduce waste.",
