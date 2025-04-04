@@ -1,64 +1,58 @@
-# Hong Kong Sustainability Challenge
+# Sustainability Game
 
-A text-based interactive game focused on sustainability challenges specific to Hong Kong.
+## Overview
+The **Sustainability Game** is an interactive web-based game designed to promote eco-friendly habits and raise awareness about sustainability. Players make decisions to balance their energy, eco-points, and sustainability levels over the course of 7 days.
 
-## About the Game
+The game logic is implemented in Python using Flask, and it is hosted online for easy access.
 
-In this game, you take on the role of a Hong Kong resident making daily choices that impact the environment and sustainability of the city. Over a period of 7 days, you'll face various challenges related to:
+---
 
-- Waste reduction
-- Urban greenery
-- Public transportation
-- Energy conservation
-- Water conservation
-- Sustainable food choices
-- Shopping habits
+## Hosted Game
+- **Game URL**: [https://cool3163.pythonanywhere.com/](https://cool3163.pythonanywhere.com/)
+  - This is the main URL where the game is hosted and can be played.
+  
+- **Redirect URL**: [https://cool3163.github.io/](https://cool3163.github.io/)
+  - Visiting this URL will automatically redirect you to the game hosted on PythonAnywhere.
 
-Your decisions will affect your:
-- **Score**: Reflects how sustainable your choices are
-- **Energy**: Some sustainable actions require more effort and deplete energy
-- **Impact**: Your overall positive influence on Hong Kong's environment
+---
 
-## Game Features
 
-- Hong Kong specific sustainability challenges and scenarios
-- Random special events that can boost your score and impact
-- Collectable items that represent your sustainability journey
-- Realistic consequences for your decisions
-- Educational facts about Hong Kong's unique environmental situation
-- Multiple endings based on your final score
+## How It Works
+1. **Game Logic**:
+   - The game logic is implemented in `sustainability_game.py` and is used by the Flask app in `app.py`.
+   - Players can perform actions, change locations, and progress through the game by interacting with the web interface.
 
-## How to Play
+2. **Hosting**:
+   - The game is hosted on PythonAnywhere at [https://cool3163.pythonanywhere.com/](https://cool3163.pythonanywhere.com/).
+   - A redirect page (`index.html`) is set up on GitHub Pages at [https://cool3163.github.io/](https://cool3163.github.io/) to forward users to the PythonAnywhere-hosted game.
 
-1. Ensure you have Python 3 installed on your computer
-2. Download the `sustainability_game.py` file
-3. Open a terminal or command prompt
-4. Navigate to the directory containing the file
-5. Run the command: `python sustainability_game.py` (or `python3 sustainability_game.py` on some systems)
-6. Follow the on-screen instructions to play
+---
 
-## Game Controls
+## How to Run Locally
+If you'd like to run the game locally on your machine:
 
-The game is entirely text-based and uses simple number inputs for choices:
-- Enter your name at the beginning
-- Press Enter to proceed through text
-- Type the number corresponding to your chosen action when prompted
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/COOL3163/COOL3163.github.io.git
+   cd COOL3163.github.io
+   ```
 
-## Educational Value
+2. **Set Up a Virtual Environment**:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
-This game is designed to:
-- Raise awareness about sustainability issues specific to Hong Kong
-- Educate players about sustainable choices in an urban environment
-- Encourage real-world sustainable behaviors
-- Demonstrate how individual choices can collectively make a significant impact
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## Requirements
+4. **Run the Flask App**:
+   ```bash
+   python app.py
+   ```
 
-- Python 3.6 or higher
-- Terminal/Command prompt with support for emoji display (for best experience)
-
-## Creator's Note
-
-This game was created to highlight the unique sustainability challenges faced by one of the world's most densely populated cities. While simplified for gameplay purposes, the scenarios are based on real sustainability issues affecting Hong Kong.
-
-Feel free to modify and expand upon this game to include more scenarios, longer gameplay, or additional features!
+5. **Access the Game**:
+   - Open your browser and go to `http://127.0.0.1:5000/`.
+   - You can now play the game locally.
