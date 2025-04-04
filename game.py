@@ -2,9 +2,11 @@
 
 """
 Hong Kong Sustainability Challenge
-Launch Script
 
-This script provides a simple way to start the game.
+DO NOT RUN THIS
+THIS IS NOT THE GAME
+IF YOU WANT TO PLAY THE GAME RUN app.py 
+THE ACTUAL GAME IS A WEBSITE
 """
 
 import os

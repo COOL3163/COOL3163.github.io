@@ -18,10 +18,12 @@ class SustainabilityGame:
             "park": {"description": "Hong Kong Park", "actions": ["plant_trees", "water_conservation", "community_garden", "skip_recycling", "consume_sugar_drinks"]}
         }
         self.action_impacts = {
-            #Rest
+            # Rest
             "rest": {"eco_points": 0, "energy": 50, "sustainability": 0},
-            
-            #positive actions
+
+            # Positive actions
+            "save_energy": {"eco_points": 10, "energy": -15, "sustainability": 0.3},
+            "reduce_waste": {"eco_points": 8, "energy": -10, "sustainability": 0.5},
             "use_public_transport": {"eco_points": 5, "energy": -10, "sustainability": 0.7},
             "reduce_paper": {"eco_points": 3, "energy": -5, "sustainability": 0.3},
             "advocate_sustainability": {"eco_points": 10, "energy": -25, "sustainability": 1},
@@ -35,16 +37,15 @@ class SustainabilityGame:
             "water_conservation": {"eco_points": 15, "energy": -20, "sustainability": 0.8},
             "community_garden": {"eco_points": 20, "energy": -25, "sustainability": 1},
 
-            #negative actions
+            # Negative actions
+            "consume_alot_of_meat": {"eco_points": -18, "energy": 20, "sustainability": -1.0},
             "eat_junk_food": {"eco_points": -10, "energy": 25, "sustainability": -1},
             "drive_a_car": {"eco_points": -25, "energy": 30, "sustainability": -0.8},
             "use_single_use_plastics": {"eco_points": -5, "energy": 20, "sustainability": -0.5},
             "buy_fast_fashion": {"eco_points": -30, "energy": 15, "sustainability": -1.2},
             "order_takeout": {"eco_points": -8, "energy": 10, "sustainability": -0.4},
             "skip_recycling": {"eco_points": -12, "energy": 25, "sustainability": -0.7},
-            "consume_alot_of_meat": {"eco_points": -18, "energy": 20, "sustainability": -1.0},
-            "consume_sugar_drinks": {"eco_points": -10, "energy": 15, "sustainability": -0.6},
-
+            "consume_sugar_drinks": {"eco_points": -10, "energy": 15, "sustainability": -0.6}
         }
         self.tips = [
             "Bring your own shopping bag to reduce waste.",
