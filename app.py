@@ -20,7 +20,7 @@ def start_game():
     return redirect(url_for('game_view'))
 
 @app.route('/game')
-def game_view():
+def game_view():af
     if not hasattr(app, 'game') or app.game.energy <= 0 or app.game.days > 7:
         return redirect(url_for('game_over'))
 
