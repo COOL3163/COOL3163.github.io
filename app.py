@@ -14,13 +14,13 @@ def start_game():
     if not player_name:
         return redirect(url_for('home'))
 
-    app.game = SustainabilityGame()  # Attach the game object to the app instance
+    app.game = SustainabilityGame()  
     app.game.player_name = player_name
     
     return redirect(url_for('game_view'))
 
 @app.route('/game')
-def game_view():af
+def game_view():
     if not hasattr(app, 'game') or app.game.energy <= 0 or app.game.days > 7:
         return redirect(url_for('game_over'))
 
@@ -39,7 +39,7 @@ def game_view():af
         location=location,
         actions=location['actions'],
         tip=session.pop('sustainability_tip', None),
-        game={"locations": app.game.locations}  # Pass game.locations explicitly
+        game={"locations": app.game.locations}  
     )
 
 @app.route('/action/<action>')
