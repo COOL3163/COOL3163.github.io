@@ -1,6 +1,68 @@
 html{
-    font-family: serif;
-    background: rgb(253, 254, 246);
+    padding: 0;
     margin: 0;
 }
 
+h1, h2, h3 {
+    font-family: 'Raleway', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+body {
+    font-family: 'PT Serif', serif;
+    background-color: #FFFFFF;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0
+}
+
+p {
+    font-family: 'PT Serif', serif;
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin: 8px auto;
+    padding: 0 2rem;
+}
+
+
+.topbar {
+    display: block;
+    height: 60px
+}
+
+.links {
+    position: fixed;
+    display: flex;
+    gap: 2rem;
+    text-align: center;
+    padding: 10px;
+    background-color: #000000;
+    color: #FFFFFF;
+    width: 100%;
+    padding-left: 100px;
+}
+
+.link {
+    background-color: transparent;
+    color: #CCCCCC;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; 
+    padding: 0.25rem;
+    border-bottom: 2px solid transparent;
+}
+
+.link.active {
+    color: #FFFFFF;
+    border-bottom-color: #FFFFFF;
+}
+
+.link:hover {
+    color: #FFFFFF;
+    border-bottom-color: #FFFFFF;
+}
