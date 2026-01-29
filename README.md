@@ -10,3 +10,4 @@ My personal site.
 
 - [flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - center content and create structure to the site
 - https://isfedwin.github.io/aboutme.html used his top bar design
+- https://www.w3schools.com/cssref/pr_scroll-behavior.php for smooth scroll (i think it looks better?)
