@@ -2,6 +2,8 @@
 <html>
     
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,12 +12,16 @@
   </head>
 
   <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" integrity="sha512-egJ/Y+22P9NQ9aIyVCh0VCOsfydyn8eNmqBy+y2CnJG+fpRIxXMS6jbWP8tVKp0jp+NO5n8WtMUAnNnGoJKi4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
     <div class="topbar">
       <nav class="links">
-        <a href="#home" class="link active">Home</a>
-        <a href="#about" class="link">About</a>
-        <a href="#projects" class="link">Projects</a>
-        <a href="#hobbies" class="link">Hobbies</a>
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="link active">Home</a></li>
+          <li class="nav-item"><a href="#about" class="link">About</a></li>
+          <li class="nav-item"><a href="#projects" class="link">Projects</a></li>
+          <li class="nav-item"><a href="#hobbies" class="link">Hobbies</a></li>
+        </ul>
       </nav>
     </div>
 
@@ -41,8 +47,15 @@
         </div>
       </div>
     </section>
-      
 
-    <script src="scroll.js"></script>
+    <section id="projects">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in urna lectus. Aliquam nec sagittis quam. Morbi vestibulum tempor turpis, eu mollis neque rutrum in. Maecenas augue ipsum, pharetra vitae pretium quis, volutpat nec dui. Fusce egestas lacus eget libero efficitur iaculis. Proin in lectus vitae felis scelerisque accumsan. Proin a commodo nisl.</p>
+    </section>
+
+    <section id="hobbies">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in urna lectus. Aliquam nec sagittis quam. Morbi vestibulum tempor turpis, eu mollis neque rutrum in. Maecenas augue ipsum, pharetra vitae pretium quis, volutpat nec dui. Fusce egestas lacus eget libero efficitur iaculis. Proin in lectus vitae felis scelerisque accumsan. Proin a commodo nisl.</p>
+    </section>
+
+
   </body>
 </html>
