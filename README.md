@@ -12,3 +12,4 @@ My personal site.
 - https://isfedwin.github.io/aboutme.html used his top bar design
 - https://www.w3schools.com/cssref/pr_scroll-behavior.php for smooth scroll (i think it looks better?)
 - https://codepen.io/joxmar/pen/NqqMEg used this javascript (modified) for active link highlighting
+- https://prismic.io/blog/css-hover-effects#11-profile-card-hover used this website for inspiration for the card animations
