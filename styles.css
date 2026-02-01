@@ -110,7 +110,8 @@ p {
 #about {
     padding: 6rem 2rem;
     text-align: center;
-    background-color: #FFFFFF;
+    /* alt bg */
+    background-color: #F5F5F5;
     margin-top: 60px;
 }
 
@@ -129,23 +130,22 @@ p {
 
 
 .info-list {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-top: 1.5rem;
-        min-height: 100vh;
-        align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    align-items: center;
 }
 
 .info-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 0.75rem;
-        width: 100%;
-        max-width: 600px;
-        border-bottom: 1px solid #E0E0E0;
-        box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.75rem;
+    width: 100%;
+    max-width: 600px;
+    border-bottom: 1px solid #E0E0E0;
+    box-sizing: border-box;
 }
 
 @media (max-width: 700px) {
@@ -171,4 +171,68 @@ p {
 
 .info-value {
     font-family: 'PT Serif', serif;
+}
+
+#projects {
+    padding: 6rem 2rem;
+    text-align: center;
+    margin-top: 60px;
+    min-height: 75vh
+}
+
+#projects-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid #000000;
+    display: inline-block;
+}
+
+.projects-grid {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+img {
+    width:100%; 
+    border-radius: 8px;
+}
+
+.project-card {
+    background-color: #F5F5F5;
+    border: 2px solid #000000;
+    padding: 1.5rem;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s
+}
+
+.project-card:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    transform: translateY(-8px) scale(1.05) rotate(-1deg);
+    box-shadow: 0 5px 10px #111111;
+}
+
+.project-card:hover .project-link {
+    color: #FFFFFF;
+    border-bottom-color: #FFFFFF;
+}
+
+.project-link {
+    margin-top: 1rem;
+    color: #000000;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid;
+    transition: color 0.25s, border-bottom-color 0.25s
+}
+
+.project-card:hover .project-link:hover {
+    color: #ffd900;
+    border-bottom-color: #ffd900;
 }
