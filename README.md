@@ -13,3 +13,4 @@ My personal site.
 - https://www.w3schools.com/cssref/pr_scroll-behavior.php for smooth scroll (i think it looks better?)
 - https://codepen.io/joxmar/pen/NqqMEg used this javascript (modified) for active link highlighting
 - https://prismic.io/blog/css-hover-effects#11-profile-card-hover used this website for inspiration for the card animations
+- https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid-template-columns for the grid-template-columns used in the hobbies section
