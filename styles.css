@@ -86,9 +86,10 @@ p {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    min-height: 80vh;
+    min-height: 100vh;
     text-align: center;
     background-color: #FFFFFF;
+    position: relative;
 }
 
 #title {
@@ -98,6 +99,9 @@ p {
     margin-bottom: 1rem;
     line-height: 1;
     text-transform: uppercase;
+    margin-top: 0;
+    position: relative;
+    top: -0.5rem;
 }
 
 #subtitle {
@@ -106,6 +110,7 @@ p {
     color: #666666;
     max-width: 600px;
     margin: 0 auto;
+    margin-top: 0;
 }
 
 #about {
@@ -260,6 +265,10 @@ img {
     gap: 3rem;
     margin-top: 2.5rem;
     align-items: flex-start;
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hobbies-col h3 {
@@ -287,19 +296,62 @@ img {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding-left: 0.5rem
+    padding-left: 0.5rem;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 
-.facts {
-    background-color: #FFFFFF;
-    border: 1px solid #000000;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
+#hobbies-list li:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    transform: translateY(-8px) scale(1.05) rotate(-1deg);
+    box-shadow: 0 5px 10px #111111;
 }
 
-.facts p {
-    font-style: italic;
-    font-size: 1em;
+#facts-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0;
     margin: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#facts-list li {
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #FFFFFF;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    /* the icon on the hobby size made it annoying to resize the fact box so its the same size */
+    padding: 1em 1em 1em 1em; 
+    margin-bottom: 0.5em;
+    transition: background-color 0.25s, color 0.25s, transform 0.25s, box-shadow 0.25s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#facts-list li:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+    transform: translateY(-8px) scale(1.05) rotate(-1deg);
+    box-shadow: 0 5px 10px #111111;
+}
+
+
+.hobby-icon {
+    font-size: 1.5em;
+    margin-right: 0.5em;
 }
 
