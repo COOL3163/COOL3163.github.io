@@ -14,3 +14,6 @@ My personal site.
 - https://codepen.io/joxmar/pen/NqqMEg used this javascript (modified) for active link highlighting
 - https://prismic.io/blog/css-hover-effects#11-profile-card-hover used this website for inspiration for the card animations
 - https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/grid-template-columns for the grid-template-columns used in the hobbies section
+- https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_mailto for email in footer
+- https://flowbite.com/icons/ for the icons in the footer
+- https://stackoverflow.com/questions/17711146/how-to-open-link-in-a-new-tab-in-html so i can open links in a new tab
