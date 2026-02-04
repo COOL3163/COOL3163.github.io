@@ -17,3 +17,4 @@ My personal site.
 - https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_mailto for email in footer
 - https://flowbite.com/icons/ for the icons in the footer
 - https://stackoverflow.com/questions/17711146/how-to-open-link-in-a-new-tab-in-html so i can open links in a new tab
+- https://www.youtube.com/watch?v=mHJ3l18YqNM for the BGM (low quality funkytown)
