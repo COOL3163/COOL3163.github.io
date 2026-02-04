@@ -12,7 +12,23 @@
 
   <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" integrity="sha512-egJ/Y+22P9NQ9aIyVCh0VCOsfydyn8eNmqBy+y2CnJG+fpRIxXMS6jbWP8tVKp0jp+NO5n8WtMUAnNnGoJKi4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.1/buzz.min.js" integrity="sha512-jJlr43Pi5sS1Kclc07jnv231PJzRThlN5e0NqlVlCrIn5/rU7sLhezvBPzxjUw5xjRfeorCTlF9kQz/PNj/eIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
+    <script>
+      var sound;
+      $(function() {
+      sound = new buzz.sound( "assets/music", {
+          formats: ['ogg']
+      }).setVolume(100).play();
+
+      $('#pause').click(function() {
+          sound.pause();
+      });
+      $('#play').click(function() {
+          sound.play();
+          });
+      });    
+    </script>
     <div class="topbar">
       <nav class="links">
         <ul class="nav-list">
@@ -21,12 +37,12 @@
           <li class="nav-item"><a href="#projects" class="link">Projects</a></li>
           <li class="nav-item"><a href="#hobbies" class="link">Hobbies</a></li>
         </ul>
+        <div class="music-controls">
+          <button id="play">Play</button>
+          <button id="pause">Pause</button>
+        </div>
       </nav>
     </div>
-
-    <audio src="/assets/music.mp3" autoplay loop>
-      <p>If you are reading this, it is because your browser does not support the audio element.</p>
-    </audio>
     
     <section id="home">
         <h1 id="title">ELLIOTT</h1>

@@ -43,6 +43,9 @@ p {
     padding: 10px 0 10px 100px;
     z-index: 10000;
     /* so that it doesnt flash */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav-list {
@@ -82,16 +85,51 @@ p {
     border-bottom-color: #FFFFFF;
 }
 
+
+.music-controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 200px;
+    /* for some reason, space-evenly makes the controls go out */
+}
+
+.music-controls button {
+    background-color: transparent;
+    color: #CCCCCC;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em; 
+    padding: 0.25rem;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+
+.music-controls button:hover {
+    color: #FFFFFF;
+    border-bottom-color: #FFFFFF;
+}
+
 @media (max-width: 700px) {
     .links {
-        padding-left: 25px;
-        padding-right: 25px;
-        flex-direction: column;
+        padding: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 0.5rem;
     }
 
     .nav-list {
         gap: 1rem;
+        order: 1;
+    }
+
+    .music-controls {
+        order: 2;
     }
 }
 

@@ -18,3 +18,4 @@ My personal site.
 - https://flowbite.com/icons/ for the icons in the footer
 - https://stackoverflow.com/questions/17711146/how-to-open-link-in-a-new-tab-in-html so i can open links in a new tab
 - https://www.youtube.com/watch?v=mHJ3l18YqNM for the BGM (low quality funkytown)
+- https://stackoverflow.com/a/24712281 used this solution to play music on chrome. For some reason, if i use the <audio> tag, it would not work on chrome (but works on safari?), hence I used buzz.js to create 2 buttons that toggled background music.
