@@ -81,6 +81,12 @@ p {
     border-bottom-color: #FFFFFF;
 }
 
+@media (max-width: 700px) {
+    .links {
+        padding-left: 25px;
+    }
+}
+
 #home {
     display: flex;
     align-items: center;
@@ -364,6 +370,12 @@ img {
     margin-right: 0.5em;
 }
 
+@media (max-width: 700px) {
+    .hobbies-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .site-footer {
     display: flex;
     justify-content: space-between;
@@ -440,4 +452,11 @@ img {
 .footer-icon-box:hover .footer-username {
     color: #ffd900;
 }
+
+@media (max-width: 700px) {
+    .footer-right {
+        flex-wrap: wrap;
+    }
+}
+
 
